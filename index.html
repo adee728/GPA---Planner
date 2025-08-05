@@ -5,131 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPA Calculator & Planner</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-left">
-                <div class="logo">
-                    <i class="fas fa-calculator"></i>
-                </div>
-                <h1>Dashboard</h1>
-            </div>
-            <div class="header-right">
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-sun" id="themeIcon"></i>
-                </button>
+        <header>
+            <h1>Dashboard</h1>
+            <p>Welcome, Student! 👋</p>
+            <div class="info">
+                <span>Privacy & Security</span> <span>Accessibility</span>
+                <p>Your data stays private — no tracking, no third-party access.</p>
             </div>
         </header>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Welcome Section -->
-            <section class="welcome-section">
-                <div class="welcome-card">
-                    <div class="welcome-header">
-                        <i class="fas fa-home"></i>
-                        <span>Welcome, Student! 👋</span>
-                    </div>
+        <section class="features">
+            <h2>Features</h2>
+            <div class="feature-cards">
+                <div class="card" onclick="showGpaPopup()">
+                    <img src="images/calculator (1).png" alt="GPA Calculator">
+                    <h3>GPA Calculator</h3>
+                    <p>Semester GPA</p>
                 </div>
-            </section>
-
-            <!-- Scenario Testing Section -->
-            <section class="scenario-section">
-                <div class="scenario-card">
-                    <div class="scenario-header">
-                        <div class="scenario-icon">
-                            <i class="fas fa-flask"></i>
-                        </div>
-                        <div class="scenario-content">
-                            <div class="scenario-badge">
-                                <span>Scenario Testing</span>
-                                <span class="planning-badge">Planning</span>
-                            </div>
-                            <p>Test what-if scenarios in GPA Planner and see their GPA impact.</p>
-                        </div>
-                    </div>
+                <div class="card">
+                    <img src="images/calculator (1).png" alt="CGPA Calculator">
+                    <h3>CGPA Calculator</h3>
+                    <p>Cumulative GPA</p>
                 </div>
-            </section>
-
-            <!-- Features Section -->
-            <section class="features-section">
-                <h2>Features</h2>
-                <div class="features-grid">
-                    <!-- GPA Calculator -->
-                    <div class="feature-card" data-feature="gpa-calculator">
-                        <div class="feature-icon blue-bg">
-                            <img src="images/calculator (1).png" alt="GPA Calculator" onerror="this.innerHTML='<i class=\'fas fa-calculator\'></i>'">
-                        </div>
-                        <div class="feature-content">
-                            <h3>GPA Calculator</h3>
-                            <p>Semester GPA</p>
-                        </div>
-                    </div>
-
-                    <!-- CGPA Calculator -->
-                    <div class="feature-card" data-feature="cgpa-calculator">
-                        <div class="feature-icon purple-bg">
-                            <img src="images/layout.png" alt="CGPA Calculator" onerror="this.innerHTML='<i class=\'fas fa-graduation-cap\'></i>'">
-                        </div>
-                        <div class="feature-content">
-                            <h3>CGPA Calculator</h3>
-                            <p>Cumulative GPA</p>
-                        </div>
-                    </div>
-
-                    <!-- GPA Planner -->
-                    <div class="feature-card" data-feature="gpa-planner">
-                        <div class="feature-icon green-bg">
-                            <img src="images/bar-chart.png" alt="GPA Planner" onerror="this.innerHTML='<i class=\'fas fa-chart-line\'></i>'">
-                        </div>
-                        <div class="feature-content">
-                            <h3>GPA Planner</h3>
-                            <p>Plan Target GPA</p>
-                        </div>
-                    </div>
-
-                    <!-- Percentage to GPA -->
-                    <div class="feature-card" data-feature="percentage-gpa">
-                        <div class="feature-icon orange-bg">
-                            <img src="images/customize.png" alt="Percentage to GPA" onerror="this.innerHTML='<i class=\'fas fa-exchange-alt\'></i>'">
-                        </div>
-                        <div class="feature-content">
-                            <h3>Percentage to GPA</h3>
-                            <p>Convert % and GPA</p>
-                        </div>
-                    </div>
+                <div class="card">
+                    <img src="images/layout.png" alt="GPA Planner">
+                    <h3>GPA Planner</h3>
+                    <p>Plan Target GPA</p>
                 </div>
-            </section>
-        </main>
-
-        <!-- Bottom Navigation -->
-        <nav class="bottom-nav">
-            <div class="nav-item active" data-nav="home">
-                <img src="images/home.png" alt="Home" onerror="this.innerHTML='<i class=\'fas fa-home\'></i>'">
-                <span>Home</span>
+                <div class="card">
+                    <img src="images/bar-chart.png" alt="Percentage to GPA">
+                    <h3>Percentage to GPA</h3>
+                    <p>Convert % and GPA</p>
+                </div>
             </div>
-            <div class="nav-item" data-nav="custom">
-                <img src="images/customize.png" alt="Custom" onerror="this.innerHTML='<i class=\'fas fa-sliders-h\'></i>'">
-                <span>Custom</span>
-            </div>
-            <div class="nav-item" data-nav="templates">
-                <img src="images/layout.png" alt="Templates" onerror="this.innerHTML='<i class=\'fas fa-folder\'></i>'">
-                <span>Templates</span>
-            </div>
-            <div class="nav-item" data-nav="statistics">
-                <img src="images/bar-chart.png" alt="Statistics" onerror="this.innerHTML='<i class=\'fas fa-chart-bar\'></i>'">
-                <span>Statistics</span>
-            </div>
-            <div class="nav-item" data-nav="settings">
-                <img src="images/settings.png" alt="Settings" onerror="this.innerHTML='<i class=\'fas fa-cog\'></i>'">
-                <span>Settings</span>
-            </div>
-        </nav>
+        </section>
+        <footer>
+            <img src="images/home.png" alt="Home" onclick="location.href='#'">
+            <img src="images/customize.png" alt="Custom" onclick="location.href='#'">
+            <img src="images/layout.png" alt="Templates" onclick="location.href='#'">
+            <img src="images/bar-chart.png" alt="Statistics" onclick="location.href='#'">
+            <img src="images/settings.png" alt="Settings" onclick="location.href='#'">
+        </footer>
     </div>
-
+    <div id="gpaPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hideGpaPopup()">&times;</span>
+            <h2>GPA Calculator</h2>
+            <form id="gpaForm">
+                <div id="courseInputs">
+                    <div class="input-group">
+                        <input type="text" placeholder="Grade (e.g., A, B+)" required>
+                        <input type="number" placeholder="Credits" min="1" required>
+                    </div>
+                </div>
+                <button type="button" onclick="addCourseInput()">Add Course</button>
+                <button type="submit">Calculate GPA</button>
+            </form>
+            <p id="gpaResult"></p>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
